@@ -1,0 +1,27 @@
+{
+  "name": "messengerbotwitai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "node": "0.0.0",
+    "node-record-lpcm16": "0.1.4",
+    "node-wit": "^3.3.2",
+    "promise": "^7.1.1",
+    "request": "2.42.0",
+    "underscore": "1.7.0",
+    "uuid": "^3.0.1",
+    "witai-speech": "0.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^3.13.1"
+  }
+}
