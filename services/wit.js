@@ -38,13 +38,13 @@ var actions = {
 			FB.newMessage(context._fbid_, message)
 		}
 
-		
+
 		cb()
-		
+
 	},
 
 	merge(sessionId, context, entities, message, cb) {
-		// Reset the weather story
+		// Reset the story
 		delete context.status
 		delete context.intentType
 		delete context.loc
@@ -55,13 +55,13 @@ var actions = {
 
        var intentType = firstEntityValue(entities, 'intent')
        if (intentType) {
-      			
+
       			context.intentType = intentType
       			console.log("context intent type ->" + intentType);
           }
 
       else {
-                 
+
         console.log("unable to fetch intent type");
       }
 
@@ -107,7 +107,7 @@ var actions = {
 		// Here we can place an API call to a weather service
 		 if (context.loc) {
 		 	console.log("Entering in to the main function");
-		 	getId(context.loc, context.intentType) 
+		 	getId(context.loc, context.intentType)
 		 		.then(function (response) {
 		 			if(response){
 		 				var status = JSON.parse(response);
@@ -120,10 +120,10 @@ var actions = {
 
 		 				context.status = status.error;
 
-		 			}	
+		 			}
 
 		 			}
-		 				
+
 		 			cb(context);
 		 		})
 		 		.catch(function (err) {
@@ -171,12 +171,12 @@ var getId = function (location, intType) {
         	{
   			 var url =  'https://thawing-eyrie-66536.herokuapp.com/orderDetails?orderId=' + location ;
              console.log("the URL is ->  " + url);
-            
+
             }
            else if (intType === 'quote')
            {
 
-           	
+
            	var url =  'https://thawing-eyrie-66536.herokuapp.com/quoteInfo?quoteId=' + location ;
            	console.log("the URL is ->  " + url);
 
@@ -195,7 +195,7 @@ var getId = function (location, intType) {
 		    	console.log("the response  is ->  " + body);
 
 			})
-                
+
 	})
 }
 
